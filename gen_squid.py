@@ -153,6 +153,8 @@ squid_conf_suffix = '''
     auth_param basic credentialsttl 1 minute
     auth_param basic casesensitive off
     
+    acl mylan src 192.168.12.0/255.255.255.0
+    http_access allow mylan
     acl db-auth proxy_auth REQUIRED
     http_access allow db-auth
     http_access allow localhost
